@@ -61,15 +61,17 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-lg">
+      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-card/80 backdrop-blur-lg">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
-          <div className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary">
-              <Icon name="Heart" className="h-6 w-6 text-white" />
-            </div>
+          <div className="flex items-center gap-3">
+            <img 
+              src="https://cdn.poehali.dev/files/7d6d9de5-861c-4ae2-ba92-12eebc5450cf.png" 
+              alt="Logo" 
+              className="h-12 w-12 object-contain"
+            />
             <div>
-              <h1 className="text-lg font-bold leading-none text-primary">IntegraMed</h1>
-              <p className="text-xs text-muted-foreground">Платформа здоровья</p>
+              <h1 className="text-lg font-bold leading-none text-primary">Качество жизни</h1>
+              <p className="text-xs text-secondary">Красиво и легко</p>
             </div>
           </div>
           <nav className="hidden md:flex items-center gap-6">
@@ -124,9 +126,9 @@ const Index = () => {
       <main className="container mx-auto px-4 py-8">
         {activeSection === 'home' && (
           <div className="animate-fade-in space-y-8">
-            <section className="rounded-2xl bg-gradient-to-br from-primary/10 via-accent/5 to-background p-8 md:p-12">
+            <section className="rounded-3xl bg-gradient-to-br from-primary/15 via-secondary/20 to-background p-8 md:p-12 shadow-lg">
               <div className="max-w-3xl">
-                <Badge className="mb-4 bg-accent text-white">Интегративный подход</Badge>
+                <Badge className="mb-4 rounded-full bg-primary px-4 py-1 text-white shadow-md">Интегративный подход</Badge>
                 <h2 className="mb-4 text-4xl font-bold text-foreground md:text-5xl">
                   Ваше здоровье — наш приоритет
                 </h2>
@@ -134,11 +136,11 @@ const Index = () => {
                   Комплексное сопровождение на пути к здоровью через синтез традиционной и современной медицины
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <Button size="lg" onClick={() => setActiveSection('programs')}>
+                  <Button size="lg" className="rounded-full shadow-lg" onClick={() => setActiveSection('programs')}>
                     Начать программу
                     <Icon name="ArrowRight" className="ml-2 h-5 w-5" />
                   </Button>
-                  <Button size="lg" variant="outline" onClick={() => setActiveSection('education')}>
+                  <Button size="lg" variant="outline" className="rounded-full" onClick={() => setActiveSection('education')}>
                     Узнать больше
                   </Button>
                 </div>
@@ -146,10 +148,10 @@ const Index = () => {
             </section>
 
             <section className="grid gap-6 md:grid-cols-3">
-              <Card className="transition-all hover:shadow-lg">
+              <Card className="rounded-3xl border-border/40 shadow-md transition-all hover:shadow-xl">
                 <CardHeader>
-                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                    <Icon name="Stethoscope" className="h-6 w-6 text-primary" />
+                  <div className="mb-2 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/15">
+                    <Icon name="Stethoscope" className="h-7 w-7 text-primary" />
                   </div>
                   <CardTitle>Персонализация</CardTitle>
                   <CardDescription>
@@ -158,10 +160,10 @@ const Index = () => {
                 </CardHeader>
               </Card>
 
-              <Card className="transition-all hover:shadow-lg">
+              <Card className="rounded-3xl border-border/40 shadow-md transition-all hover:shadow-xl">
                 <CardHeader>
-                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
-                    <Icon name="Activity" className="h-6 w-6 text-accent" />
+                  <div className="mb-2 flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/30">
+                    <Icon name="Activity" className="h-7 w-7 text-primary" />
                   </div>
                   <CardTitle>Мониторинг</CardTitle>
                   <CardDescription>
@@ -170,10 +172,10 @@ const Index = () => {
                 </CardHeader>
               </Card>
 
-              <Card className="transition-all hover:shadow-lg">
+              <Card className="rounded-3xl border-border/40 shadow-md transition-all hover:shadow-xl">
                 <CardHeader>
-                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                    <Icon name="Users" className="h-6 w-6 text-primary" />
+                  <div className="mb-2 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/15">
+                    <Icon name="Users" className="h-7 w-7 text-primary" />
                   </div>
                   <CardTitle>Поддержка</CardTitle>
                   <CardDescription>
@@ -183,7 +185,7 @@ const Index = () => {
               </Card>
             </section>
 
-            <Card>
+            <Card className="rounded-3xl border-border/40 shadow-md">
               <CardHeader>
                 <CardTitle>Ваши показатели здоровья</CardTitle>
                 <CardDescription>Отслеживайте динамику ключевых параметров</CardDescription>
@@ -195,7 +197,7 @@ const Index = () => {
                       <span className="text-sm font-medium">{metric.label}</span>
                       <span className="text-sm text-muted-foreground">{metric.value}%</span>
                     </div>
-                    <Progress value={metric.value} className="h-2" />
+                    <Progress value={metric.value} className="h-3 rounded-full" />
                   </div>
                 ))}
               </CardContent>
