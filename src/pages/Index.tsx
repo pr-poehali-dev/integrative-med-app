@@ -128,7 +128,13 @@ const Index = () => {
           <div className="animate-fade-in space-y-8">
             <section className="rounded-3xl bg-gradient-to-br from-primary/15 via-secondary/20 to-background p-8 md:p-12 shadow-lg">
               <div className="max-w-3xl">
-                <Badge className="mb-4 rounded-full bg-primary px-4 py-1 text-white shadow-md">Интегративный подход</Badge>
+                <div className="mb-4 flex items-start gap-3">
+                  <Icon name="Quote" className="h-8 w-8 text-primary/60" />
+                  <div>
+                    <p className="text-lg italic text-foreground/90">Болезнь легче предупредить, чем лечить</p>
+                    <p className="text-sm text-muted-foreground">— Гиппократ</p>
+                  </div>
+                </div>
                 <h2 className="mb-4 text-4xl font-bold text-foreground md:text-5xl">
                   Ваше здоровье — наш приоритет
                 </h2>
